@@ -1,23 +1,21 @@
 <template>
-  <Piano :pressed="pressedKeys"/>
-  <div>
+  <div class="text-center"><div class="inline-block"><Piano :pressed="pressedKeys"/></div></div>
+  <div class="text-center mt-5">
     <button @click="pickUpKey()">Новая тональность</button>
     <button @click="pickUpDegree(key)" :disabled="toValue(key) == null">Новая ступень</button>
     <button @click="playKeyChord(key)" :disabled="toValue(key) == null">Повторить тональность</button>
     <button @click="playDegree()" :disabled="toValue(degree) == null">Повторить ступень</button>
   </div>
-  <div>
-    <button @click="makeGuess(0)" :disabled="toValue(degree) == null">I</button>
-    <button @click="makeGuess(1)" :disabled="toValue(degree) == null">II</button>
-    <button @click="makeGuess(2)" :disabled="toValue(degree) == null">III</button>
-    <button @click="makeGuess(3)" :disabled="toValue(degree) == null">IV</button>
-    <button @click="makeGuess(4)" :disabled="toValue(degree) == null">V</button>
-    <button @click="makeGuess(5)" :disabled="toValue(degree) == null">VI</button>
-    <button @click="makeGuess(6)" :disabled="toValue(degree) == null">VII</button>
+  <div class="text-center">
+    <button class="degree-button" @click="makeGuess(0)" :disabled="toValue(degree) == null">I</button>
+    <button class="degree-button" @click="makeGuess(1)" :disabled="toValue(degree) == null">II</button>
+    <button class="degree-button" @click="makeGuess(2)" :disabled="toValue(degree) == null">III</button>
+    <button class="degree-button" @click="makeGuess(3)" :disabled="toValue(degree) == null">IV</button>
+    <button class="degree-button" @click="makeGuess(4)" :disabled="toValue(degree) == null">V</button>
+    <button class="degree-button" @click="makeGuess(5)" :disabled="toValue(degree) == null">VI</button>
+    <button class="degree-button" @click="makeGuess(6)" :disabled="toValue(degree) == null">VII</button>
   </div>
-  <div id="result">
-
-  </div>
+  <div id="result"></div>
 </template>
 
 <script setup>
@@ -95,6 +93,20 @@ function makeGuess(guess) {
 
 <style scoped>
 button {
-  margin: 5px;
+  @apply m-1 p-1 border border-black;
+}
+
+button:disabled {
+  @apply bg-gray-300;
+}
+
+.degree-button {
+  @apply w-[13.3%] min-w-20;
+}
+
+@media (aspect-ratio < 1.2) {
+  #result {
+    @apply text-center;
+  }
 }
 </style>
