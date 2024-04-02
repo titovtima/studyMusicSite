@@ -15,7 +15,7 @@
     <button class="degree-button" @click="makeGuess(5)" :disabled="toValue(degree) == null">VI</button>
     <button class="degree-button" @click="makeGuess(6)" :disabled="toValue(degree) == null">VII</button>
   </div>
-  <div id="result"></div>
+  <div id="result" class="text-2xl"></div>
 </template>
 
 <script setup>
@@ -104,9 +104,10 @@ button:disabled {
   @apply w-[13.3%] min-w-20;
 }
 
+#result {
+  @apply text-center;
+}
+
 @media (aspect-ratio < 1.2) {
-  #result {
-    @apply text-center;
-  }
 }
 </style>
