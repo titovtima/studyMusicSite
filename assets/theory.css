@@ -1,21 +1,25 @@
-.par {
+p {
     margin: 1rem 0;
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
     margin: 1rem 0;
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
     margin: 1rem 0;
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 300;
     margin: 1rem 0;
+}
+
+td {
+    padding: 0 0.5rem;
 }
