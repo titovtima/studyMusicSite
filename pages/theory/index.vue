@@ -1,5 +1,5 @@
 <template>
-  <!-- <TheoryMenu open/> -->
+  <TheoryMenu open/>
 </template>
 
 <script setup lang="ts">
