@@ -1,1 +1,1 @@
-export const isWideScreen = computed(() => window.innerWidth > 800);
+export const isWideScreen = computed(() => process.client ? window.innerWidth > 800 : true);

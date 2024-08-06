@@ -11,13 +11,14 @@ import Navbar from './Navbar.vue';
 import TheoryMenu from './TheoryMenu.vue';
 
 const showMenu = ref(false);
-if (toValue(isWideScreen))
-  showMenu.value = true;
-// const menuWidth = computed(() => showMenu ? 10 : 0);
-const menuWidth = ref(10);
-watch(showMenu, () => {
-  menuWidth.value = showMenu.value ? 10 : 0;
-}, {immediate: true});
+const menuWidth = ref(0);
+onMounted(() => {
+  if (toValue(isWideScreen))
+    showMenu.value = true;
+  watch(showMenu, () => {
+    menuWidth.value = showMenu.value ? 10 : 0;
+  }, {immediate: true});
+});
 </script>
 
 <style>
