@@ -214,7 +214,7 @@
 </template>
 
 <script setup lang="ts">
-import Theory from '~/components/Theory.vue';
+useHead({ title: 'Тональность' });
 </script>
 
 <style scoped>

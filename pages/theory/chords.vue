@@ -222,7 +222,7 @@
 </template>
 
 <script setup lang="ts">
-
+useHead({ title: 'Аккорды' });
 </script>
 
 <style scoped>
