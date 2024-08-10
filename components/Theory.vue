@@ -1,7 +1,6 @@
 <template>
   <Navbar @click-menu="showMenu = !showMenu"/>
-  <TheoryMenu :open="showMenu"/>
-  <!-- <div class="p-8 inline-block"> -->
+  <TheoryMenu :class="{'hidden': !showMenu}" class="absolute bg-white bg-opacity-95 p-8"/>
   <div class="p-8 inline-block" :style="{ marginLeft: menuWidth + 'rem'}">
     <slot></slot>
   </div>

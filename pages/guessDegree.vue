@@ -1,4 +1,5 @@
 <template>
+  <Navbar class="mb-2"/>
   <div class="text-center"><div class="inline-block"><Piano :pressed="pressedKeys"/></div></div>
   <div class="text-center mt-5">
     <button @click="pickUpKey()">Новая тональность</button>
@@ -106,8 +107,5 @@ button:disabled {
 
 #result {
   @apply text-center;
-}
-
-@media (aspect-ratio < 1.2) {
 }
 </style>
