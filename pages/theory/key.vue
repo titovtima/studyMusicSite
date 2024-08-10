@@ -23,7 +23,7 @@
     <p>
       В натуральном мажоре расстояния между соседними ступенями такие:
     </p>
-    <table>
+    <table><tbody>
       <tr><td>I - II</td><td>тон</td></tr>
       <tr><td>II - III</td><td>тон</td></tr>
       <tr><td>III - IV</td><td>полутон</td></tr>
@@ -31,21 +31,21 @@
       <tr><td>V - VI</td><td>тон</td></tr>
       <tr><td>VI - VII</td><td>тон</td></tr>
       <tr><td>VII - I</td><td>полутон</td></tr>
-    </table>
+    </tbody></table>
     <p>
       От первой ступени до следующей первой 6 тонов - октава.
     </p>
     <p>
       Можно представить соотношения в виде расстояний от первой ступени до всех остальных:
     </p>
-    <table>
+    <table><tbody>
       <tr><td>I - II</td><td>1 тон</td><td>б2</td></tr>
       <tr><td>I - III</td><td>2 тона</td><td>б3</td></tr>
       <tr><td>I - IV</td><td>2,5 тона</td><td>ч4</td></tr>
       <tr><td>I - V</td><td>3,5 тона</td><td>ч5</td></tr>
       <tr><td>I - VI</td><td>4,5 тона</td><td>б6</td></tr>
       <tr><td>I - VII</td><td>5,5 тонов</td><td>б7</td></tr>
-    </table>
+    </tbody></table>
     <p>
       В гармоническом мажоре VI ступень понижается на полтона.
       Остальные ступени такие же как в натуральном мажоре.
@@ -59,7 +59,7 @@
     <p>
       В натуральном миноре расстояния между соседними ступенями такие:
     </p>
-    <table>
+    <table><tbody>
       <tr><td>I - II</td><td>тон</td></tr>
       <tr><td>II - III</td><td>полутон</td></tr>
       <tr><td>III - IV</td><td>тон</td></tr>
@@ -67,21 +67,21 @@
       <tr><td>V - VI</td><td>полутон</td></tr>
       <tr><td>VI - VII</td><td>тон</td></tr>
       <tr><td>VII - I</td><td>тон</td></tr>
-    </table>
+    </tbody></table>
     <p>
       От первой ступени до следующей первой 6 тонов - октава.
     </p>
     <p>
       Можно представить соотношения в виде расстояний от первой ступени до всех остальных:
     </p>
-    <table>
+    <table><tbody>
       <tr><td>I - II</td><td>1 тон</td><td>б2</td></tr>
       <tr><td>I - III</td><td>1,5 тона</td><td>м3</td></tr>
       <tr><td>I - IV</td><td>2,5 тона</td><td>ч4</td></tr>
       <tr><td>I - V</td><td>3,5 тона</td><td>ч5</td></tr>
       <tr><td>I - VI</td><td>4 тона</td><td>м6</td></tr>
       <tr><td>I - VII</td><td>5 тонов</td><td>м7</td></tr>
-    </table>
+    </tbody></table>
     <p>
       В гармоническом миноре VII ступень повышается на полтона.
       Остальные ступени такие же как в натуральном миноре.
@@ -125,7 +125,7 @@
     <p>
       Итого, ре мажор:
     </p>
-    <table>
+    <table><tbody>
       <tr><td>I</td><td>ре</td></tr>
       <tr><td>II</td><td>ми</td></tr>
       <tr><td>III</td><td>фа♯</td></tr>
@@ -133,14 +133,14 @@
       <tr><td>V</td><td>ля</td></tr>
       <tr><td>VI</td><td>си</td></tr>
       <tr><td>VII</td><td>до♯</td></tr>
-    </table>
+    </tbody></table>
     <p>
       Ре минор можно получить проделав такие же операции для минорного лада, либо опустив III, VI и VII ступени мажора.
     </p>
     <p>
       Ре минор:
     </p>
-    <table>
+    <table><tbody>
       <tr><td>I</td><td>ре</td></tr>
       <tr><td>II</td><td>ми</td></tr>
       <tr><td>III</td><td>фа</td></tr>
@@ -148,7 +148,7 @@
       <tr><td>V</td><td>ля</td></tr>
       <tr><td>VI</td><td>си♭</td></tr>
       <tr><td>VII</td><td>до</td></tr>
-    </table>
+    </tbody></table>
     <p>
       VII(г) - седьмая ступень гармонического минора - обычная VII, повышенная на полтона. Это до♯.
     </p>
@@ -170,7 +170,7 @@
       <p>
         Соль мажор:
       </p>
-      <table>
+      <table><tbody>
         <tr><td>I</td><td>соль</td></tr>
         <tr><td>II</td><td>ля</td></tr>
         <tr><td>III</td><td>си</td></tr>
@@ -178,13 +178,13 @@
         <tr><td>V</td><td>ре</td></tr>
         <tr><td>VI</td><td>ми</td></tr>
         <tr><td>VII</td><td>фа♯</td></tr>
-      </table>
+      </tbody></table>
     </div>
     <div class="w-[50%] inline-block">
       <p>
         Ми минор:
       </p>
-      <table>
+      <table><tbody>
         <tr><td>I</td><td>ми</td></tr>
         <tr><td>II</td><td>фа♯</td></tr>
         <tr><td>III</td><td>соль</td></tr>
@@ -192,7 +192,7 @@
         <tr><td>V</td><td>си</td></tr>
         <tr><td>VI</td><td>до</td></tr>
         <tr><td>VII</td><td>ре</td></tr>
-      </table>
+      </tbody></table>
     </div>
     <p>
       Такие две тональности (натурального мажора и минора), у которых набор нот одинаковый,

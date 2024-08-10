@@ -36,54 +36,54 @@
     <p>
       Основные интервалы:
     </p>
-    <ol class="list-decimal ml-5">
+    <ol class="ml-5">
       <li>Прима
-        <ul class="list-disc ml-5">
+        <ul class="ml-5">
           <li>Чистая - 0 тонов</li>
         </ul>
       </li>
       <li>Секунда
-        <ul class="list-disc ml-5">
+        <ul class="ml-5">
           <li>Малая - 0,5 тона</li>
           <li>Большая - 1 тон</li>
           <li>Увеличенная - 1,5 тона</li>
         </ul>
       </li>
       <li>Терция
-        <ul class="list-disc ml-5">
+        <ul class="ml-5">
           <li>Малая - 1,5 тона</li>
           <li>Большая - 2 тона</li>
         </ul>
       </li>
       <li>Кварта
-        <ul class="list-disc ml-5">
+        <ul class="ml-5">
           <li>Уменьшённая - 2 тона</li>
           <li>Чистая - 2,5 тона</li>
           <li>Увеличенная - 3 тона</li>
         </ul>
       </li>
       <li>Квинта
-        <ul class="list-disc ml-5">
+        <ul class="ml-5">
           <li>Уменьшённая - 3 тона</li>
           <li>Чистая - 3,5 тона</li>
           <li>Увеличенная - 4 тона</li>
         </ul>
       </li>
       <li>Секста
-        <ul class="list-disc ml-5">
+        <ul class="ml-5">
           <li>Малая - 4 тона</li>
           <li>Большая - 4,5 тона</li>
         </ul>
       </li>
       <li>Септима
-        <ul class="list-disc ml-5">
+        <ul class="ml-5">
           <li>Уменьшённая - 4,5 тона</li>
           <li>Малая - 5 тонов</li>
           <li>Большая - 5,5 тонов</li>
         </ul>
       </li>
       <li>Октава
-        <ul class="list-disc ml-5">
+        <ul class="ml-5">
           <li>Чистая - 6 тонов</li>
         </ul>
       </li>
@@ -144,5 +144,5 @@ useHead({ title: 'Интервалы' });
 </script>
 
 <style scoped>
-/* @import url('~/assets/theory.css'); */
+@import url('~/assets/theory.css');
 </style>
