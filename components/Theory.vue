@@ -1,7 +1,9 @@
 <template>
   <Navbar @click-menu="showMenu = !showMenu"/>
-  <TheoryMenu :class="{'hidden': !showMenu}" class="absolute bg-white bg-opacity-95 p-8"/>
-  <div class="p-8 inline-block" :style="{ marginLeft: menuWidth + 'rem'}">
+  <!-- <TheoryMenu ref="menu" id="theory-menu" class="absolute bg-white bg-opacity-95 p-8" :class="{hidden: !showMenu}"/> -->
+  <TheoryMenu ref="menu" id="theory-menu" class="absolute bg-white bg-opacity-95 p-8" :style="showMenu ? '' : 'display: var(--menu-show)'"/>
+  <!-- <div id="main-block" class="p-8 inline-block" :style="{ marginLeft: menuWidth + 'rem'}"> -->
+  <div id="main-block" class="p-8 inline-block">
     <slot></slot>
   </div>
 </template>
@@ -11,11 +13,24 @@ import Navbar from './Navbar.vue';
 import TheoryMenu from './TheoryMenu.vue';
 
 const showMenu = ref(false);
-const menuWidth = ref(0);
-onMounted(() => {
-  if (toValue(isWideScreen)) {
-    showMenu.value = true;
-    menuWidth.value = 10;
-  }
-});
 </script>
+
+<style scoped>
+#main-block {
+  margin-left: 10rem;
+}
+
+* {
+  --menu-show: block;
+}
+
+@media screen and (max-width: 800px) {
+  * {
+    --menu-show: none;
+  }
+
+  #main-block {
+    margin-left: 0;
+  }
+}
+</style>

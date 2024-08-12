@@ -1,6 +1,6 @@
 <template>
   <nav class="px-8 pt-2 border-b border-black min-h-8">
-    <span ref="menuButton" class="cursor-pointer" @click="$emit('clickMenu')">меню</span>
+    <span ref="menuButton" id="menuButton" @click="$emit('clickMenu')">меню</span>
     <NuxtLink to="/" class="float-right">главная</NuxtLink>
   </nav>
 </template>
@@ -16,3 +16,15 @@ onMounted(() => {
     menuButton.value.classList.add('hidden');
 });
 </script>
+
+<style scoped>
+#menuButton {
+  @apply cursor-pointer;
+}
+
+@media screen and (min-width: 800px) { 
+  #menuButton {
+    display: none;
+  }
+}
+</style>
