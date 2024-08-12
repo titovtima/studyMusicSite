@@ -7,7 +7,7 @@
     <div class="split"><div>
       <h1>Упражнения на слух</h1>
       <NuxtLink to="/guessDegree">Определить ступень</NuxtLink><br/>
-      <a href="https://yandex.ru/games/app/201255?lang=ru" target="_blank">Определить интервал</a>
+      <a href="https://guessinterval.studymusiconline.ru/" target="_blank">Определить интервал</a>
     </div></div>
   </div>
 </template>
