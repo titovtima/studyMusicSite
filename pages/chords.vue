@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <BuildChord />
+  <BuildChord play-button/>
 </template>
 
 <script setup lang="ts">

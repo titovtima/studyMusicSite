@@ -30,14 +30,25 @@
   <div style="display: flex; align-items: center; flex-direction: column;">
     <Piano :octaves="octaves" :pressed="pressed"/>
   </div>
+  <div v-if="playButton" style="display: flex; align-items: center; flex-direction: column;">
+    <button ref="playButtonRef">Сыграть</button>
+  </div>
 </template>
 
 <script setup lang="ts">
 import musicTheory from '@titovtima/music-theory';
 
+defineProps({
+  'playButton': {
+    type: Boolean,
+    default: false
+  }
+});
+
 const noteInput: Ref<any> = ref(null);
 const chordTypeInput: Ref<any> = ref(null);
 const chordInput: Ref<any> = ref(null);
+const playButtonRef: Ref<any> = ref(null);
 
 const route = useRoute();
 
@@ -54,10 +65,22 @@ for (let note of notes) {
 const octaves = ref(1);
 const pressed: Ref<number[]> = ref([]);
 
+let chord: musicTheory.Chord | null = null;
+let chordNotes: musicTheory.Note[] = [];
+
 onMounted(() => {
   noteInput.value.oninput = () => { buildChord(); };
   chordTypeInput.value.oninput = () => { buildChord(); };
   chordInput.value.oninput = () => { buildChord(false); };
+  if (playButtonRef.value) {
+    playButtonRef.value.onclick = () => {
+      let audios: any[] = [];
+      for (let note of chordNotes) {
+        audios.push(new Audio(`/sounds/${note.noteId}.mp3`));
+      }
+      setTimeout(() => { audios.forEach(value => value.play()); }, 500);
+    }
+  }
 });
 
 function buildChord(fromNoteInput: boolean = true) {
@@ -74,13 +97,15 @@ function buildChord(fromNoteInput: boolean = true) {
   let chordString = chordInput.value.value.replace(/#/, '♯').replace(/b/, '♭');
   if (allChords.includes(chordString)) {
     try {
-      let chord = musicTheory.chordFromName(chordString, 'English');
-      let chordNotes = musicTheory.getChordNotes(chord);
+      chord = musicTheory.chordFromName(chordString, 'English');
+      chordNotes = musicTheory.getChordNotes(chord);
       pressed.value = chordNotes.map(note => note.noteId);
       octaves.value = Math.max(1, ...chordNotes.map(note => Math.floor(note.noteId / 12) + 1));
     } catch(e) {
       pressed.value = [];
       octaves.value = 1;
+      chord = null;
+      chordNotes = [];
     }
   } else {
     pressed.value = [];
