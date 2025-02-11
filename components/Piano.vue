@@ -3,8 +3,6 @@
 </template>
 
 <script setup lang="ts">
-import {ref, onMounted, type Ref} from "vue";
-
 const canvas: Ref<HTMLCanvasElement | null> = ref(null);
 
 const props = defineProps({
@@ -19,12 +17,16 @@ const props = defineProps({
   pressed: {
     type: Array,
     default: []
+  },
+  octaves: {
+    type: Number,
+    default: 2
   }
 });
 
 onMounted(() => {
   if (canvas.value) {
-    canvas.value.width = props.width;
+    canvas.value.width = Math.min(props.width, props.height * 2.5 * props.octaves);
     canvas.value.height = props.height;
     drawPiano(canvas.value);
   }
@@ -36,30 +38,32 @@ watch(() => props.pressed, () => {
 
 function whiteKeyPositionToId(position: number): number {
   let result = position * 2;
-  if (position > 2) result--;
-  if (position > 6) result--;
-  if (position > 9) result--;
+  for (let i = 0; i < props.octaves; i++) {
+    if (position > 2 + i * 7) result--;
+    if (position > 6 + i * 7) result--;
+  }
   return result;
 }
 
 function blackKeyPositionToId(position: number): number {
   if (position % 7 == 2 || position % 7 == 6) return -1;
   let result = position * 2 + 1;
-  if (position > 2) result--;
-  if (position > 6) result--;
-  if (position > 9) result--;
+  for (let i = 0; i < props.octaves; i++) {
+    if (position > 2 + i * 7) result--;
+    if (position > 6 + i * 7) result--;
+  }
   return result;
 }
 
 function drawPiano(canvas: HTMLCanvasElement) {
-  let ctx = canvas.getContext("2d")
+  let ctx = canvas.getContext("2d");
   if (!ctx)
     return;
   ctx.fillStyle = "#FFFFFF";
   ctx.strokeStyle = "#000000";
   ctx.lineWidth = 2;
-  let width = canvas.width / 14;
-  for (let i = 0; i < 14; i++) {
+  let width = canvas.width / (7 * props.octaves);
+  for (let i = 0; i < 7 * props.octaves; i++) {
     ctx.fillRect(i * width, 0, width, canvas.height);
     ctx.strokeRect(i * width, 0, width, canvas.height);
   }
@@ -67,14 +71,14 @@ function drawPiano(canvas: HTMLCanvasElement) {
   let height = canvas.height * 3 / 5;
   let width2 = width * 2 / 3;
   let margin = width * 2 / 3;
-  for (let i = 0; i < 13; i++) {
+  for (let i = 0; i < 7 * props.octaves - 1; i++) {
     if (i % 7 == 2 || i % 7 == 6)
       continue;
     ctx.fillRect(i * width + margin, 0, width2, height);
   }
   ctx.fillStyle = "#FF7777";
   let padding = Math.min(5, width2 / 8);
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < 7 * props.octaves; i++) {
     if (props.pressed.includes(whiteKeyPositionToId(i))) {
       ctx.fillRect(i * width + padding, height + padding,
         width - padding * 2, canvas.height - height - padding * 2);

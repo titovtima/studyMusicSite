@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@titovtima/music-theory": "^1.0.6"
+    "@titovtima/music-theory": "^1.0.14"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
