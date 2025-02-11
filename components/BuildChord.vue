@@ -8,6 +8,9 @@
       <datalist id="chooseNoteDatalist">
         <option v-for="note of notes">{{ note }}</option>
       </datalist>
+      <!-- <span style="@media screen and (max-width: 800px) { display: block; }"></span> -->
+      <span class="span-sep"></span>
+      <!-- <br v-if="!isWideScreen"/> -->
       <label>Тип:</label>
       <input ref="chordTypeInput" list="chooseChordTypeDatalist"/>
       <datalist id="chooseChordTypeDatalist">
@@ -15,16 +18,17 @@
       </datalist>
     </div>
     <div>или</div>
-    <div style="margin-bottom: 1rem;">
+    <div style="margin-bottom: 1rem; align-items: center;">
       <label>Аккорд целиком:</label>
+      <span class="span-sep"></span>
       <input ref="chordInput" list="chooseChordDatalist"/>
       <datalist id="chooseChordDatalist">
         <option v-for="chord of allChords">{{ chord }}</option>
       </datalist>
     </div>
-    <div>
-      <Piano :octaves="octaves" :pressed="pressed"/>
-    </div>
+  </div>
+  <div style="display: flex; align-items: center; flex-direction: column;">
+    <Piano :octaves="octaves" :pressed="pressed"/>
   </div>
 </template>
 
@@ -89,5 +93,11 @@ function buildChord(fromNoteInput: boolean = true) {
 input {
   border: 1px solid #000;
   margin: 0 0.5rem 0 0;
+}
+
+@media screen and (max-width: 800px) {
+  .span-sep {
+    display: block;
+  }
 }
 </style>
