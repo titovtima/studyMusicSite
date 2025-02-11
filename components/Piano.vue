@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvas"/>
+  <canvas ref="canvas"></canvas>
 </template>
 
 <script setup lang="ts">
@@ -32,8 +32,11 @@ onMounted(() => {
   }
 });
 watch(() => props.pressed, () => {
-  if (canvas.value)
+  if (canvas.value) {
+    canvas.value.width = Math.min(props.width, props.height * 2.5 * props.octaves);
+    canvas.value.height = props.height;
     drawPiano(canvas.value);
+  }
 });
 
 function whiteKeyPositionToId(position: number): number {

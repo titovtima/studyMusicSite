@@ -10,6 +10,9 @@
       <a href="https://guessinterval.studymusiconline.ru/" target="_blank">Определить интервал</a>
     </div></div>
   </div>
+  <div style="width: 100%;">
+    <BuildChord />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -17,12 +20,6 @@ useHead({ title: 'StudyMusic' });
 </script>
 
 <style scoped>
-h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 1rem 0;
-}
-
 .split {
   @apply w-1/2 p-8;
 }
@@ -35,5 +32,13 @@ h1 {
   .split {
     @apply p-4;
   }
+}
+</style>
+
+<style>
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 1rem 0;
 }
 </style>
